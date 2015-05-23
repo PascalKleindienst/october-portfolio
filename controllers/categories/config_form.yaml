@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: pkleindienst.portfolio::lang.portfolio.create_category
+form: ~/plugins/pkleindienst/portfolio/models/category/fields.yaml
+modelClass: PKleindienst\Portfolio\Models\Category
+defaultRedirect: pkleindienst/portfolio/categories
+
+create:
+    redirect: pkleindienst/portfolio/categories/update/:id
+    redirectClose: pkleindienst/portfolio/categories
+
+update:
+    redirect: pkleindienst/portfolio/categories
+    redirectClose: pkleindienst/portfolio/categories

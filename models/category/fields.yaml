@@ -1,0 +1,16 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: pkleindienst.portfolio::lang.category.name
+        placeholder: pkleindienst.portfolio::lang.category.name_placeholder
+        span: left
+
+    slug:
+        label: pkleindienst.portfolio::lang.category.slug
+        span: right
+        placeholder: pkleindienst.portfolio::lang.category.slug_placeholder
+        preset: name

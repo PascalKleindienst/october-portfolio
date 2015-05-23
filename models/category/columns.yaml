@@ -1,0 +1,13 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: pkleindienst.portfolio::lang.category.name
+        searchable: true
+
+    item_count:
+        label: pkleindienst.portfolio::lang.category.items
+        sortable: false
