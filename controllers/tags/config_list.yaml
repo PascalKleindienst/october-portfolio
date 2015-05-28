@@ -1,0 +1,42 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: ~/plugins/pkleindienst/portfolio/models/tag/columns.yaml
+
+# Model Class name
+modelClass: PKleindienst\Portfolio\Models\Tag
+
+# List Title
+title: pkleindienst.portfolio::lang.tags.list_title
+
+# Link URL for each record
+recordUrl: pkleindienst/portfolio/tags/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 5
+# Displays the list column set up button
+showSetup: true
+
+# Displays the sorting link on each column
+showSorting: true
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Default sorting column
+defaultSort:
+    column: name
+    direction: asc
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt

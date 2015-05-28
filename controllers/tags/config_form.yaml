@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: pkleindienst.portfolio::lang.portfolio.create_tag
+form: ~/plugins/pkleindienst/portfolio/models/tag/fields.yaml
+modelClass: PKleindienst\Portfolio\Models\Tag
+defaultRedirect: pkleindienst/portfolio/tags
+
+create:
+    redirect: pkleindienst/portfolio/tags/update/:id
+    redirectClose: pkleindienst/portfolio/tags
+
+update:
+    redirect: pkleindienst/portfolio/tags
+    redirectClose: pkleindienst/portfolio/tags
