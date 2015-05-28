@@ -4,7 +4,7 @@
 
 columns:
     name:
-        label: Tag
+        label: pkleindienst.portfolio::lang.tag.name
 
     item_count:
         label: pkleindienst.portfolio::lang.tag.items
