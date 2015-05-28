@@ -1,0 +1,13 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: pkleindienst.portfolio::lang.tag.name
+
+    items:
+        label: pkleindienst.portfolio::lang.tag.items
+        type: relation
+        nameFrom: title
+        emptyOption: pkleindienst.portfolio::lang.tag.noItems

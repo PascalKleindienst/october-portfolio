@@ -1,0 +1,21 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Tag
+
+    item_count:
+        label: pkleindienst.portfolio::lang.tag.items
+        sortable: false
+
+    created_at:
+        label: pkleindienst.portfolio::lang.tag.created
+        type: date
+        invisible: true
+
+    updated_at:
+        label: pkleindienst.portfolio::lang.tag.updated
+        type: date
+        invisible: true

@@ -1,0 +1,17 @@
+{
+  "name": "pascalkleindienst/october-portfolio",
+  "description": "Portfolio Plugin for October CMS",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "keywords": ["october", "rainlab", "portfolio", "plugin"],
+  "authors": [
+    {
+      "name": "Pascal Kleindienst",
+      "email": "mail@pascalkleindienst.de"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "owl/tagbox": "~1.0@dev"
+  }
+}
