@@ -19,11 +19,13 @@ noRecordsMessage: backend::lang.list.no_records
 
 # Records to display per page
 recordsPerPage: 5
+
 # Displays the list column set up button
 showSetup: true
 
 # Displays the sorting link on each column
 showSorting: true
+
 # Display checkboxes next to each record
 showCheckboxes: true
 

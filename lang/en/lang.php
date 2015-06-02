@@ -48,6 +48,7 @@ return [
         'updated' => 'Updated at',
         'noItems' => 'No Items available',
         'delete_confirm' => 'Do you really want to delete this tag?',
+        'delete_success' => 'Successfully deleted those tags.',
         'return_to_tags' => 'Return to the portfolio tags list',
     ]
 ];
