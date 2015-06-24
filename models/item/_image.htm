@@ -1,0 +1,5 @@
+<?php
+if ($record->hero_image) {
+    $src = $record->hero_image->getThumb(50, 50, ['mode' => 'crop']);
+    echo '<img src="' . $src . '" alt="">';
+}

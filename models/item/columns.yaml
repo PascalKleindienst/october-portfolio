@@ -1,0 +1,44 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+#  hero_image:
+#    label: ''
+#    type: partial
+#    path: ~/plugins/pkleindienst/portfolio/models/item/_image.htm
+#    searchable: false
+#    sortable: false
+
+  title:
+    label: pkleindienst.portfolio::lang.portfolio.title
+    searchable: true
+
+  categories:
+    label: pkleindienst.portfolio::lang.portfolio.categories
+    relation: categories
+    select: name
+    searchable: true
+    sortable: false
+
+  tags:
+    label: pkleindienst.portfolio::lang.portfolio.tags
+    relation: tags
+    select: name
+    searchable: true
+    sortable: false
+
+  visibility:
+      label: pkleindienst.portfolio::lang.portfolio.visibility
+      type: partial
+      path: ~/plugins/pkleindienst/portfolio/models/item/_visibility.htm
+
+  created_at:
+    label: pkleindienst.portfolio::lang.portfolio.created
+    type: date
+    invisible: true
+
+  updated_at:
+    label: pkleindienst.portfolio::lang.portfolio.updated
+    type: date
+    invisible: true

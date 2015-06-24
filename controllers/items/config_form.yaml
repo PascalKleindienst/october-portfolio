@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: pkleindienst.portfolio::lang.portfolio.create_item
+form: ~/plugins/pkleindienst/portfolio/models/item/fields.yaml
+modelClass: PKleindienst\Portfolio\Models\Item
+defaultRedirect: pkleindienst/portfolio/items
+
+create:
+    redirect: pkleindienst/portfolio/items/update/:id
+    redirectClose: pkleindienst/portfolio/items
+
+update:
+    redirect: pkleindienst/portfolio/items
+    redirectClose: pkleindienst/portfolio/items

@@ -1,0 +1,106 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    title:
+        label: pkleindienst.portfolio::lang.portfolio.title
+        span: left
+        placeholder: pkleindienst.portfolio::lang.portfolio.title_placeholder
+
+    slug:
+        label: pkleindienst.portfolio::lang.portfolio.slug
+        span: right
+        placeholder: pkleindienst.portfolio::lang.portfolio.slug_placeholder
+        preset:
+            field: title
+            type: slug
+
+    toolbar:
+        type: partial
+        path: item_toolbar
+        cssClass: collapse-visible
+
+secondaryTabs:
+    fields:
+        content:
+            tab: pkleindienst.portfolio::lang.portfolio.tab_edit
+            stretch: true
+            span: full
+            type: richeditor
+            size: huge
+
+        categories:
+            tab: pkleindienst.portfolio::lang.portfolio.tab_categories
+            label: pkleindienst.portfolio::lang.portfolio.categories
+            type: relation
+            span: left
+
+        visibility:
+            tab: pkleindienst.portfolio::lang.portfolio.tab_categories
+            label: pkleindienst.portfolio::lang.portfolio.visibillity
+            span: right
+            type: balloon-selector
+            options:
+              public: pkleindienst.portfolio::lang.portfolio.public
+              private: pkleindienst.portfolio::lang.portfolio.private
+
+        tagbox:
+            tab: pkleindienst.portfolio::lang.portfolio.tab_categories
+            label: pkleindienst.portfolio::lang.portfolio.tags
+#            placeholder: pkleindienst.portfolio::lang.portfolio.tags_placeholder
+            type: owl-tagbox
+            slugify: false
+
+        description:
+            tab: pkleindienst.portfolio::lang.portfolio.tab_details
+            label: pkleindienst.portfolio::lang.portfolio.description
+            comment: pkleindienst.portfolio::lang.portfolio.description_comment
+            type: textarea
+            size: small
+            span: full
+
+        tagline:
+            tab: pkleindienst.portfolio::lang.portfolio.tab_details
+            label: pkleindienst.portfolio::lang.portfolio.tagline
+            comment: pkleindienst.portfolio::lang.portfolio.tagline_comment
+            type: text
+            span: full
+
+        website:
+            tab: pkleindienst.portfolio::lang.portfolio.tab_details
+            label: pkleindienst.portfolio::lang.portfolio.website
+            comment: pkleindienst.portfolio::lang.portfolio.website_comment
+            span: left
+            preset:
+              field: website
+              type: url
+
+        date:
+            tab: pkleindienst.portfolio::lang.portfolio.tab_details
+            label: pkleindienst.portfolio::lang.portfolio.date
+            comment: pkleindienst.portfolio::lang.portfolio.date_comment
+            type: datepicker
+            mode: date
+            span: right
+
+        hero_image:
+            tab: pkleindienst.portfolio::lang.portfolio.tab_images
+            label: pkleindienst.portfolio::lang.portfolio.hero_image
+            comment: pkleindienst.portfolio::lang.portfolio.hero_image_comment
+            span: left
+            type: fileupload
+            mode: image
+            imageWidth: 350
+            imageHeight: 350
+
+        featured_images:
+            tab: pkleindienst.portfolio::lang.portfolio.tab_images
+            label: pkleindienst.portfolio::lang.portfolio.featured_images
+            comment: pkleindienst.portfolio::lang.portfolio.featured_images_comment
+            span: right
+            type: fileupload
+            mode: image
+            imageWidth: 175
+            imageHeight: 175

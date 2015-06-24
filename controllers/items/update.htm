@@ -1,0 +1,21 @@
+<?php if (!$this->fatalError): ?>
+
+<div class="layout fancy-layout">
+    <?= Form::open([
+        'class' => 'layout',
+        'data-change-monitor' => 'true',
+        'id' => 'post-form'
+    ]) ?>
+    <?= $this->formRender() ?>
+
+<?= Form::close() ?>
+
+<?php else: ?>
+    <div class="control-breadcrumb">
+        <?= Block::placeholder('breadcrumb') ?>
+    </div>
+    <div class="padded-container">
+        <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
+        <p><a href="<?= Backend::url('pkleindienst/portfolio/items') ?>" class="btn btn-default"><?= e(trans('pkleindienst.portfolio::lang.portfolio.return_to_items')) ?></a></p>
+    </div>
+<?php endif ?>

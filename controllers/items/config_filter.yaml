@@ -1,0 +1,21 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    categories:
+        label: Category
+        modelClass: PKleindienst\Portfolio\Models\Category
+        nameFrom: name
+        scope: FilterCategories
+
+    tags:
+        label: Tags
+        modelClass: PKleindienst\Portfolio\Models\Tag
+        nameFrom: name
+        scope: FilterTags
+
+    visibility:
+        label: Hide Public
+        type: checkbox
+        conditions: visibility <> 'public'
