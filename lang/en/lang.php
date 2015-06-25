@@ -39,6 +39,8 @@ return [
         'featured_images_comment' => 'Other images used in a slider to showcase the item',
         'created' => 'Created at',
         'updated' => 'Updated at',
+        'slider_options' => 'Slider Options (Owl Carousel 2)',
+        'slider_options_desc' => 'Customize the slider options via a json object. Available options: http://www.owlcarousel.owlgraphic.com/docs/api-options.html',
 
         // tabs
         'tab_edit' => 'Edit',

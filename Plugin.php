@@ -2,9 +2,17 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use System\Classes\SettingsManager;
 
+/**
+ * Plugin Entry Point
+ * @package PKleindienst\Portfolio
+ */
 class Plugin extends PluginBase
 {
+    /**
+     * @return array
+     */
     public function pluginDetails()
     {
         return [
@@ -16,6 +24,9 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * @return array
+     */
     public function registerFormWidgets()
     {
         return [
@@ -26,13 +37,20 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * @return array
+     */
     public function registerComponents()
     {
         return [
-
+            'PKleindienst\Portfolio\Components\Items' => 'portfolioItems',
+            'PKleindienst\Portfolio\Components\Item' => 'portfolioItem',
         ];
     }
 
+    /**
+     * @return array
+     */
     public function registerPermissions()
     {
         return [
@@ -51,6 +69,27 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * @return array
+     */
+    public function registerSettings()
+    {
+        return [
+            'settings' => [
+                'label'       => 'pkleindienst.portfolio::lang.settings.label',
+                'description' => 'pkleindienst.portfolio::lang.settings.description',
+                'icon'        => 'icon-picture-o',
+                'context'     => 'mysettings',
+                'category'    =>  SettingsManager::CATEGORY_MYSETTINGS,
+                'class'       => 'PKleindienst\Portfolio\Models\Settings',
+                'order'       => 100
+            ]
+        ];
+    }
+
+    /**
+     * @return array
+     */
     public function registerNavigation()
     {
         return [

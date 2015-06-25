@@ -1,0 +1,11 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+  slider_options:
+     label: pkleindienst.portfolio::lang.portfolio.slider_options
+     commentAbove: pkleindienst.portfolio::lang.portfolio.slider_options_desc
+     type: codeeditor
+     size: huge
+     language: json
