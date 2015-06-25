@@ -1,0 +1,7 @@
+{
+  "name": "Portfolio",
+  "dependencies": {
+    "owl.carousel": "*",
+    "shufflejs": "~3.1.1"
+  }
+}
