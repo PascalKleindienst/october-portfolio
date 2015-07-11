@@ -42,20 +42,20 @@ class Item extends Model
      * @var array Relation
      */
     public $attachMany = [
-        'featured_images' => ['System\Models\File', 'order' => 'sort_order']
+        'featured_images' => [ 'System\Models\File', 'order' => 'sort_order' ]
     ];
 
     /**
      * @var array Relation
      */
     public $attachOne = [
-        'hero_image' => ['System\Models\File']
+        'hero_image' => [ 'System\Models\File' ]
     ];
 
     /**
      * @var array
      */
-    protected $tagHolder = [];
+    protected $tagHolder = [ ];
 
     /**
      * @var array Validation rules
@@ -125,10 +125,10 @@ class Item extends Model
     public function afterSave()
     {
         if ($this->tagHolder) {
-            $ids = [];
+            $ids = [ ];
             foreach ($this->tagHolder as $name) {
-                $create = Tag::firstOrCreate(['name' => $name]);
-                $ids[] = $create->id;
+                $create = Tag::firstOrCreate([ 'name' => $name ]);
+                $ids[ ] = $create->id;
             }
 
             $this->tags()->sync($ids);
@@ -154,7 +154,7 @@ class Item extends Model
         /*
          * Sorting
          */
-        if (!is_array($sort)) $sort = [$sort];
+        if (!is_array($sort)) $sort = [ $sort ];
         foreach ($sort as $sorting) {
 
             if (in_array($sorting, array_keys(self::$sortingOptions))) {
@@ -170,7 +170,9 @@ class Item extends Model
          * Categories
          */
         if ($categories !== null) {
-            if (!is_array($categories)) $categories = [$categories];
+            if (!is_array($categories)) {
+                $categories = [$categories];
+            }
             $query->whereHas('categories', function ($q) use ($categories) {
                 $q->whereIn('id', $categories);
             });
@@ -192,7 +194,7 @@ class Item extends Model
         ];
 
         if (array_key_exists('categories', $this->getRelations())) {
-            $params['category'] = $this->categories->count() ? $this->categories->first()->slug : null;
+            $params[ 'category' ] = $this->categories->count() ? $this->categories->first()->slug : null;
         }
 
         return $this->url = $controller->pageUrl($pageName, $params);

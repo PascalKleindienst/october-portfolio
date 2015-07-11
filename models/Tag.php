@@ -26,7 +26,7 @@ class Tag extends Model
     /**
      * @var array Fillable fields
      */
-    public $fillable = ['name'];
+    public $fillable = [ 'name' ];
 
     /**
      * @var array Validation rules

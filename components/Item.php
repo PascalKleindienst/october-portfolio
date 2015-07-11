@@ -92,9 +92,9 @@ class Item extends ComponentBase
         $this->addJs('/plugins/pkleindienst/portfolio/assets/js/slider.js');
 
         $this->sliderOptions = Settings::get('slider_options', '{}');
-        $this->categoryPage  = $this->page['categoryPage'] = $this->property('categoryPage');
-        $this->itemsPage     = $this->page['itemsPage']    = $this->property('itemsPage');
-        $this->item          = $this->page['item']         = $this->loadItem();
+        $this->categoryPage  = $this->page[ 'categoryPage' ] = $this->property('categoryPage');
+        $this->itemsPage     = $this->page[ 'itemsPage' ]    = $this->property('itemsPage');
+        $this->item          = $this->page[ 'item' ]         = $this->loadItem();
 
         // show 404 when no item is found
         if (is_null($this->item)) {
