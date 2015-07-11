@@ -13,7 +13,7 @@ class Categories extends Controller
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
 
-    public $requiredPermissions = ['pkleindienst.portfolio.access_categories'];
+    public $requiredPermissions = [ 'pkleindienst.portfolio.access_categories' ];
 
     public function __construct()
     {

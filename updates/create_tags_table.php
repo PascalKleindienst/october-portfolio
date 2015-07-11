@@ -18,7 +18,7 @@ class CreateTagsTable extends Migration
             $table->engine = 'InnoDB';
             $table->integer('tag_id')->unsigned();
             $table->integer('item_id')->unsigned();
-            $table->primary(['item_id', 'category_id']);
+            $table->primary([ 'item_id', 'category_id' ]);
             $table->foreign('tag_id')->references('id')->on('pkleindienst_portfolio_tags')->onDelete('cascade');
             $table->foreign('item_id')->references('id')->on('pkleindienst_portfolio_items')->onDelete('cascade');
         });

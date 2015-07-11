@@ -24,7 +24,7 @@ class CreateItemsTable extends Migration
             $table->text('description')->nullable();
             $table->string('website')->nullable();
             $table->date('date')->nullable();
-            $table->enum('visibility', ['public', 'private'])->default('public');
+            $table->enum('visibility', [ 'public', 'private' ])->default('public');
             $table->timestamps();
         });
     }

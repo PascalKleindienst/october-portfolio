@@ -32,7 +32,7 @@ class Tags extends Controller
     /**
      * @var array
      */
-    public $requiredPermissions = ['pkleindienst.portfolio.access_tags'];
+    public $requiredPermissions = [ 'pkleindienst.portfolio.access_tags' ];
 
     /**
      * @var \October\Rain\Flash\FlashBag
