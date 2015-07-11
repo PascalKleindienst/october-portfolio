@@ -1,0 +1,11 @@
+<article class="col-md-8 portfolio-slider">
+    {% if item.featured_images.count %}
+    <div class="owl-carousel owl-theme portfolio-slider" data-options="{{ __SELF__.sliderOptions }}">
+        {% for image in item.featured_images %}
+        <div class="item" data-hash="{{ image.title }}">
+            <img data-src="{{ image.filename }}" src="{{ image.path }}" alt="{{ image.description }}" style="max-width: 100%" />
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</article>

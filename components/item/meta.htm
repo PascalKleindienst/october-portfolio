@@ -1,0 +1,38 @@
+<aside class="col-md-4 portfolio-meta">
+    {% if item.date %}
+    <h4>Date</h4>
+    <p>
+        &mdash; {{ item.date|date("d F Y") }}
+    </p>
+    {% endif %}
+
+    {% if item.website %}
+    <h4>Website</h4>
+    <p>
+        &mdash; <a href="{{ item.website }}">{{ item.website }}</a>
+    </p>
+    {% endif %}
+
+    {% if item.description %}
+    <h4>Project overview</h4>
+    <p>{{ item.description|raw }}</p>
+    {% endif %}
+
+    {% if item.tags.count %}
+    <h4>Tags</h4>
+    <ul>
+        {% for tag in item.tags %}
+            <li><a href="{{ __SELF__.itemsPage|page ~ '/#filter=' ~ tag.name }}">{{ tag.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if item.categories.count %}
+    <h4>Categories</h4>
+    <p>  &mdash;
+        {% for category in item.categories %}
+        <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    {% endif %}
+</aside>

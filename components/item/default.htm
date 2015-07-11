@@ -1,0 +1,11 @@
+{% set item = __SELF__.item %}
+<section class="row portfolio-item">
+    <header class="col-md-12">
+        <h2>{{ item.title }}</h2>
+    </header>
+    {% partial '@slider' %}
+    {% partial '@meta' %}
+</section>
+<div class="row portfolio-content">
+    <div class="col-md-12">{{ item.content|raw }}</div>
+</div>
