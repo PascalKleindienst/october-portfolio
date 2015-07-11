@@ -39,9 +39,10 @@ secondaryTabs:
 
         visibility:
             tab: pkleindienst.portfolio::lang.portfolio.tab_categories
-            label: pkleindienst.portfolio::lang.portfolio.visibillity
+            label: pkleindienst.portfolio::lang.portfolio.visibility
             span: right
             type: balloon-selector
+            default: public
             options:
               public: pkleindienst.portfolio::lang.portfolio.public
               private: pkleindienst.portfolio::lang.portfolio.private
@@ -73,9 +74,6 @@ secondaryTabs:
             label: pkleindienst.portfolio::lang.portfolio.website
             comment: pkleindienst.portfolio::lang.portfolio.website_comment
             span: left
-            preset:
-              field: website
-              type: url
 
         date:
             tab: pkleindienst.portfolio::lang.portfolio.tab_details

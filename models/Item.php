@@ -10,6 +10,15 @@ class Item extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
+    public static $sortingOptions = [
+        'created_at desc' => 'Created At (Descending)',
+        'created_at asc' => 'Created At (Ascending)',
+        'title desc' => 'Title (Descending)',
+        'title asc' => 'Title (Ascending)',
+        'date desc' => 'Finished (Descending)',
+        'date asc' => 'Finished (Ascending)'
+    ];
+
     /**
      * @var string
      */
@@ -71,15 +80,25 @@ class Item extends Model
 
     /**
      * Allows filtering for specifc tags
-     * @param  Illuminate\Query\Builder  $query      QueryBuilder
-     * @param  array                     $categories List of category ids
-     * @return Illuminate\Query\Builder              QueryBuilder
+     * @param  Illuminate\Query\Builder $query QueryBuilder
+     * @param  array $tags List of tag ids
+     * @return Illuminate\Query\Builder QueryBuilder
      */
     public function scopeFilterTags($query, $tags)
     {
         return $query->whereHas('tags', function ($q) use ($tags) {
             $q->whereIn('id', $tags);
         });
+    }
+
+    /**
+     * Only Public Items
+     * @param  Illuminate\Query\Builder  $query      QueryBuilder
+     * @return Illuminate\Query\Builder              QueryBuilder
+     */
+    public function scopeIsPublic($query)
+    {
+        return $query->where('visibility', 'public');
     }
 
     /**
@@ -114,5 +133,68 @@ class Item extends Model
 
             $this->tags()->sync($ids);
         }
+    }
+
+    /**
+     * Lists posts for the front end
+     * @param  array $options Display options
+     * @return self
+     */
+    public function scopeListFrontEnd($query, $options)
+    {
+        /*
+         * Default options
+         */
+        extract(array_merge([
+            'sort'       => 'created_at',
+            'categories' => null,
+            'visibility'  => 'public'
+        ], $options));
+
+        /*
+         * Sorting
+         */
+        if (!is_array($sort)) $sort = [$sort];
+        foreach ($sort as $sorting) {
+
+            if (in_array($sorting, array_keys(self::$sortingOptions))) {
+                $parts = explode(' ', $sorting);
+                if (count($parts) < 2) array_push($parts, 'desc');
+                list($sortField, $sortDirection) = $parts;
+
+                $query->orderBy($sortField, $sortDirection);
+            }
+        }
+
+        /*
+         * Categories
+         */
+        if ($categories !== null) {
+            if (!is_array($categories)) $categories = [$categories];
+            $query->whereHas('categories', function ($q) use ($categories) {
+                $q->whereIn('id', $categories);
+            });
+        }
+
+        return $query->get();
+    }
+
+    /**
+     * Sets the "url" attribute with a URL to this object
+     * @param string $pageName
+     * @param Cms\Classes\Controller $controller
+     */
+    public function setUrl($pageName, $controller)
+    {
+        $params = [
+            'id' => $this->id,
+            'slug' => $this->slug,
+        ];
+
+        if (array_key_exists('categories', $this->getRelations())) {
+            $params['category'] = $this->categories->count() ? $this->categories->first()->slug : null;
+        }
+
+        return $this->url = $controller->pageUrl($pageName, $params);
     }
 }
