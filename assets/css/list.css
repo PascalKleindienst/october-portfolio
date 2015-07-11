@@ -1,0 +1,51 @@
+.portfolio-item-list > .item {
+    margin-bottom: 10px;
+}
+
+.portfolio-item-list > .item > figure {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-item-list > .item > figure > a {
+    display: block;
+    max-width: 100%;
+    position: relative;
+}
+
+.portfolio-item-list > .item > figure > a > img{
+    display: block;
+    max-width: 100%;
+}
+
+.portfolio-item-list > .item > figure > figcaption {
+    background: #404040;
+    background: rgba(64,64,64,0.85);
+    bottom: 0;
+    height: auto;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: auto;
+    transform: translateY(100%);
+    transition: transform 0.4s ease 0s, opacity 0.1s ease 0.3s;
+    width: 100%;
+}
+
+.portfolio-item-list > .item > figure > figcaption > a {
+    display: block;
+    padding: 15px;
+    color: #f0f5f5;
+}
+
+.portfolio-item-list > .item > figure > figcaption h3 {
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+
+.portfolio-item-list > .item > figure:hover figcaption, .portfolio-item-list > .item > figure.cs-hover figcaption {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: transform 0.4s ease 0s, opacity 0.1s ease 0s;
+}

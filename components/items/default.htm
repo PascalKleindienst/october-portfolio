@@ -1,0 +1,36 @@
+{% set items = __SELF__.items %}
+{% set tags = __SELF__.tags %}
+
+{% if tags is not empty and __SELF__.showFilters %}
+    <div class="portfolio-filters">
+        <p class="filter-label">Filter:</p>
+        <div class="filter-options btn-group">
+            <button class="btn btn-primary" data-group="all">All</button>
+            {% for tag in tags %}
+            <button class="btn btn-primary" data-group="{{ tag }}">{{ tag }}</button>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+<div class="row portfolio-item-list list-inline">
+    {% for item in items %}
+        <div class="item col-xs-6 col-sm-4" data-groups='{{ item.tagBox|json_encode }}'>
+            <figure>
+                {% if item.hero_image %}
+                <a href="{{ item.url }}">
+                    <img data-src="{{ item.hero_image.filename }}" src="{{ item.hero_image.getThumb(370, 270, {'mode' : 'exact'}) }}" alt="{{ item.hero_image.description }}" />
+                </a>
+                {% endif %}
+                <figcaption>
+                    <a href="{{ item.url }}">
+                        <h3>{{ item.title }}</h3>
+                        <span>{{ item.tagline }}</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+    {% else %}
+        <div class="no-data">{{ noItemsMessage }}</div>
+    {% endfor %}
+</div>
