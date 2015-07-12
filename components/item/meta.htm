@@ -2,7 +2,7 @@
     {% if item.date %}
     <h4>Date</h4>
     <p>
-        &mdash; {{ item.date|date("d F Y") }}
+        &mdash; {{ item.date|date( __SELF__.dateFormat ) }}
     </p>
     {% endif %}
 

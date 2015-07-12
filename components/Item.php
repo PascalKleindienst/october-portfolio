@@ -92,6 +92,7 @@ class Item extends ComponentBase
         $this->addJs('/plugins/pkleindienst/portfolio/assets/js/slider.js');
 
         $this->sliderOptions = Settings::get('slider_options', '{}');
+        $this->dateFormat    = Settings::get('date_format', 'd F Y');
         $this->categoryPage  = $this->page[ 'categoryPage' ] = $this->property('categoryPage');
         $this->itemsPage     = $this->page[ 'itemsPage' ]    = $this->property('itemsPage');
         $this->item          = $this->page[ 'item' ]         = $this->loadItem();
