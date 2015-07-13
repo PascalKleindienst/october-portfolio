@@ -18,15 +18,6 @@
     <p>{{ item.description|raw }}</p>
     {% endif %}
 
-    {% if item.tags.count %}
-    <h4>Tags</h4>
-    <ul>
-        {% for tag in item.tags %}
-            <li><a href="{{ __SELF__.itemsPage|page ~ '/#filter=' ~ tag.name }}">{{ tag.name }}</a></li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
     {% if item.categories.count %}
     <h4>Categories</h4>
     <p>  &mdash;
@@ -34,5 +25,16 @@
         <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
         {% endfor %}
     </p>
+    {% endif %}
+
+    {% if item.tags.count %}
+    <h4>Tags</h4>
+    <ul class="tag-cloud">
+        {% for tag in item.tags %}
+        <li><a href="{{ __SELF__.itemsPage|page ~ '/#filter=' ~ tag.name }}" class="btn btn-xs btn-primary">
+            <i class="icon-tag"></i> {{ tag.name }}
+        </a></li>
+        {% endfor %}
+    </ul>
     {% endif %}
 </aside>

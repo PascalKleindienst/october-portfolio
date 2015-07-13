@@ -88,6 +88,7 @@ class Item extends ComponentBase
     {
         $this->addCss('/plugins/pkleindienst/portfolio/assets/vendor/owl.carousel/dist/assets/owl.carousel.min.css');
         $this->addCss('/plugins/pkleindienst/portfolio/assets/vendor/owl.carousel/dist/assets/owl.theme.default.min.css');
+        $this->addCss('/plugins/pkleindienst/portfolio/assets/css/list.css');
         $this->addJs('/plugins/pkleindienst/portfolio/assets/vendor/owl.carousel/dist/owl.carousel.min.js');
         $this->addJs('/plugins/pkleindienst/portfolio/assets/js/slider.js');
 

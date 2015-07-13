@@ -49,3 +49,13 @@
     transform: translateY(0px);
     transition: transform 0.4s ease 0s, opacity 0.1s ease 0s;
 }
+
+ul.tag-cloud {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+ul.tag-cloud li {
+    display: inline-block;
+    margin: 0 0 2px;
+}
