@@ -3,6 +3,29 @@
 # ===================================
 
 fields:
+  img_width:
+    label: pkleindienst.portfolio::lang.portfolio.settings.img_width
+    commentAbove: pkleindienst.portfolio::lang.portfolio.settings.img_width_desc
+    type: number
+    span: left
+
+  img_height:
+      label: pkleindienst.portfolio::lang.portfolio.settings.img_height
+      commentAbove: pkleindienst.portfolio::lang.portfolio.settings.img_height_desc
+      type: number
+      span: right
+
+  img_mode:
+      label: pkleindienst.portfolio::lang.portfolio.settings.img_mode
+      commentAbove: pkleindienst.portfolio::lang.portfolio.settings.img_mode_desc
+      type: dropdown
+      options:
+        auto: auto
+        exact: exact
+        portrait: portrait
+        landscape: landscape
+        crop: crop
+
   date_format:
     label: pkleindienst.portfolio::lang.portfolio.settings.date_format
     commentAbove: pkleindienst.portfolio::lang.portfolio.settings.date_format_desc

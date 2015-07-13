@@ -1,5 +1,6 @@
 {% set items = __SELF__.items %}
 {% set tags = __SELF__.tags %}
+{% set imgOptions = __SELF__.imageOptions %}
 
 {% if tags is not empty and __SELF__.showFilters %}
     <div class="portfolio-filters">
@@ -19,7 +20,11 @@
             <figure>
                 {% if item.hero_image %}
                 <a href="{{ item.url }}">
-                    <img data-src="{{ item.hero_image.filename }}" src="{{ item.hero_image.getThumb(370, 270, {'mode' : 'exact'}) }}" alt="{{ item.hero_image.description }}" />
+                    <img
+                            data-src="{{ item.hero_image.filename }}"
+                            src="{{ item.hero_image.getThumb(imgOptions.width, imgOptions.height, {'mode' : imgOptions.mode}) }}"
+                            alt="{{ item.hero_image.description }}"
+                    />
                 </a>
                 {% endif %}
                 <figcaption>

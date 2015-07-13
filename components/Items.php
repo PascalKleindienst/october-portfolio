@@ -5,6 +5,7 @@ use Cms\Classes\ComponentBase;
 use PKleindienst\Portfolio\Models\Item;
 use PKleindienst\Portfolio\Models\Category;
 use PKleindienst\Portfolio\Models\Tag;
+use PKleindienst\Portfolio\Models\Settings;
 
 /**
  * Items Component
@@ -157,6 +158,11 @@ class Items extends ComponentBase
         $this->category = $this->page['category'] = $this->loadCategory();
         $this->items = $this->page['items'] = $this->listItems();
         $this->tags = $this->page['tags'] = Tag::lists('name');
+        $this->imageOptions = [
+            'width' => Settings::get('img_width') ?: 370,
+            'height' => Settings::get('img_height') ?: 270,
+            'mode' => Settings::get('img_mode') ?: 'auto'
+        ];
     }
 
     /**
